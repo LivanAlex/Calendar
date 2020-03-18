@@ -18,7 +18,7 @@ public abstract class DayOfWeek {
 		case 4: return THURSDAY;
 		case 5: return FRIDAY;
 		case 6: return SATURDAY;
-		case 7: return SUNDAY;
+		case 0: return SUNDAY;
 		default: return MONDAY;
 		}
 		

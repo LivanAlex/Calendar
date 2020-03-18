@@ -55,18 +55,29 @@ public class Calendar {
 
 
 	public void printDate() {
-		System.out.printf("%s %d.%02d.%d", DayOfWeek.day(dayOfWeek), day, month, year);
+		String weekHoliday = "";
+		String yearHoliday = "";
 		
 		for (Holiday holiday : holidays) {
-			if(holiday.getPeriod() == Period.YEAR) {
-				CalendarByDayMonthComparator comp = new CalendarByDayMonthComparator();
+			if(holiday.getPeriod() == Period.WEEK) {
+				CalendarByDayOfWeekComparator comp = new CalendarByDayOfWeekComparator();
 				if (comp.compare(this, holiday.getDate()) == 0) {
-					System.out.print(holiday.getName());
+					weekHoliday += String.format("[%s] ", holiday.getName());
 				}
 			}
 		}
 		
+
+		for (Holiday holiday : holidays) {
+			if(holiday.getPeriod() == Period.YEAR) {
+				CalendarByDayMonthComparator comp = new CalendarByDayMonthComparator();
+				if (comp.compare(this, holiday.getDate()) == 0) {
+					yearHoliday = String.format("[%s] ", holiday.getName());
+				}
+			}
+		}
 		
+		System.out.printf("%-11s %2d.%02d.%d %s%s\n", DayOfWeek.day(dayOfWeek), day, month, year, weekHoliday, yearHoliday);
 	}
 	
 	public void addHoliday(String name, Period period) {
