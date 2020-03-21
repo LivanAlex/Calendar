@@ -7,4 +7,4 @@
     + [Payment](https://github.com/LivanAlex/Payment/tree/master/src/by/jonline/five/payment)
     + [Календарь](https://github.com/LivanAlex/Calendar/tree/master/src/by/jonline/five/calendar)
     + [Дракон и его сокровища](https://github.com/LivanAlex/Dragon/tree/master/src/by/jonline/five)
-    + [Цветочная композиция](https://github.com/LivanAlex/FlowerComposition)
+    + [Цветочная композиция](https://github.com/LivanAlex/FlowerComposition/tree/master/src/by/jonline/five)
